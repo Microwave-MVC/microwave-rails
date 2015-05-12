@@ -8,10 +8,24 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   if Vagrant.has_plugin?("vagrant-cachier")
     config.cache.scope = :box
   end
+  
+  config.ssh.forward_agent = true
+  config.ssh.forward_x11 = true
 
   config.vm.provider "virtualbox" do |vb|
-    vb.name = "microwave-rails-box"
+    vb.gui = true
+    vb.name = "microwave-rails-app-box"
     vb.memory = 2048
+
+    # vb.customize ["modifyvm", :id, "--memory", "2048"]
+    # vb.customize ["modifyvm", :id, "--cpus", "2"]
+ 
+    # Allow the VM to display the desktop environment 
+    vb.customize ["modifyvm", :id, "--graphicscontroller", "vboxvga"]
+    # vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
+    # vb.customize ["modifyvm", :id, "--ioapic", "on"]
+    # vb.customize ["modifyvm", :id, "--vram", "128"]
+    # vb.customize ["modifyvm", :id, "--hwvirtex", "on"]
   end
 
   config.vm.network "forwarded_port", guest: 3000, host: 4000
