@@ -21,11 +21,13 @@ Please make sure you have downloaded the following before proceeding. You can ch
 ## EZ Ruby on Rails
 Once you have installed the dependencies, fork this repository. (You can change the name of the repository in your settings, if you like.) Next, `git clone` your fork to your local machine and `cd` into that directory. From the root directory of your project execute the commands below:
 
-    $ vagrant up
-    $ vagrant ssh
+    $ vagrant up                    # provisions the box the first time
+    $ vagrant halt && vagrant up    # this will allow ubuntu-desktop to load
+    * Login with user vagrant and password vagrant
+    * Open Terminal
     $ cd microwave-workspace
     $ bundle exec puma
-See it on your browser at `http://localhost:4000`!
+    * See it ready to go at http://localhost:9292 on the guest VM!
 
 ## Go Live!
 You'll need a Heroku account to deploy your app. When you're ready, hit the button to go live!

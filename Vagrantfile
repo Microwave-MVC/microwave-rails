@@ -16,12 +16,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.gui = true
     vb.name = "microwave-rails-app-box"
     vb.memory = 2048
-
-    # vb.customize ["modifyvm", :id, "--memory", "2048"]
-    # vb.customize ["modifyvm", :id, "--cpus", "2"]
  
     # Allow the VM to display the desktop environment 
     vb.customize ["modifyvm", :id, "--graphicscontroller", "vboxvga"]
+    
+    # vb.customize ["modifyvm", :id, "--cpus", "2"]
     # vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
     # vb.customize ["modifyvm", :id, "--ioapic", "on"]
     # vb.customize ["modifyvm", :id, "--vram", "128"]
@@ -39,4 +38,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.cookbooks_path = "cookbook"
     chef.run_list = ["microwave-rails-chef"]
   end
+
+  config.vm.provision "shell" do |s|
+    s.inline = "sudo apt-get update"
+    s.inline = "sudo apt-get -y upgrade && sudo apt-get -y autoremove"
+    s.inline = "sudo apt-get install -y ubuntu-desktop"
+  end 
 end
