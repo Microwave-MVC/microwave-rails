@@ -3,9 +3,8 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  root 'welcome#index'
+  root "welcome#index"
 
-  get "/auth/:provider/callback" => "sessions#callback"
   post "/auth/:provider/callback" => "sessions#callback"
   resources :sessions, only: [:new, :create, :destroy]
 
