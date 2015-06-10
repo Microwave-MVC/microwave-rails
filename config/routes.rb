@@ -6,8 +6,6 @@ Rails.application.routes.draw do
   root "welcome#index"
 
   post "/auth/:provider/callback" => "sessions#callback"
-  resources :sessions, only: [:new, :create, :destroy]
-
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
