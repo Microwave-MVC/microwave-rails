@@ -39,19 +39,40 @@
 <h4>
 <a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies</h4>
 
-<p>Please make sure you have downloaded the following before proceeding:</p>
+<p>Please make sure you have downloaded the following before proceeding. You can check which versions you may have already installed by executing the commands below in your Terminal.</p>
 
 <ul>
 <li>
-<a href="https://www.virtualbox.org/wiki/Downloads">Virtualbox</a> &gt;= 4.3.26</li>
+<a href="https://www.virtualbox.org/wiki/Downloads">Virtualbox</a> &gt;= 4.3.26
+
+<ul>
 <li>
-<a href="https://www.vagrantup.com/downloads.html">Vagrant</a> &gt;= 1.7.2</li>
+<code>$ vboxmanage -v</code><br>
+</li>
+</ul>
+</li>
 <li>
-<a href="https://downloads.chef.io/chef-dk/">ChefDK</a> &gt;= 0.6.0</li>
+<a href="https://www.vagrantup.com/downloads.html">Vagrant</a> &gt;= 1.7.2
+
+<ul>
+<li>
+<code>$ vagrant -v</code> </li>
+</ul>
+</li>
+<li>
+<a href="https://downloads.chef.io/chef-dk/">ChefDK</a> &gt;= 0.6.0
+
+<ul>
+<li>
+<code>$ chef -v</code> </li>
+</ul>
+</li>
 </ul>
 
 <h2>
-<a id="1-minute-ruby-on-rails" class="anchor" href="#1-minute-ruby-on-rails" aria-hidden="true"><span class="octicon octicon-link"></span></a>1-Minute Ruby on Rails</h2>
+<a id="ez-ruby-on-rails" class="anchor" href="#ez-ruby-on-rails" aria-hidden="true"><span class="octicon octicon-link"></span></a>EZ Ruby on Rails</h2>
+
+<p>Once you have installed the dependencies, fork this repository. (You can change the name of the repository in your settings, if you like.) Next, <code>git clone</code> your fork to your local machine and <code>cd</code> into that directory. From the root directory of your project execute the commands below:</p>
 
 <pre><code>$ vagrant up
 $ vagrant ssh
@@ -59,7 +80,29 @@ $ cd microwave-workspace
 $ bundle exec puma
 </code></pre>
 
-<p>See it on your browser at http://localhost:4000!</p>
+<p>See it on your browser at <code>http://localhost:4000</code>!</p>
+
+<h2>
+<a id="go-live" class="anchor" href="#go-live" aria-hidden="true"><span class="octicon octicon-link"></span></a>Go Live!</h2>
+
+<p>You'll need a Heroku account to deploy your app. When you're ready, hit the button to go live!</p>
+
+<p><a href="https://heroku.com/deploy"><img src="https://www.herokucdn.com/deploy/button.png" alt="Deploy"></a></p>
+
+<h2>
+<a id="next-steps" class="anchor" href="#next-steps" aria-hidden="true"><span class="octicon octicon-link"></span></a>Next Steps</h2>
+
+<p>Now that you have successfully made a copy of this project and deployed it to Heroku for the first time, you can continue to develop your Rails app. To push new changes to your Heroku app, you will need to add the git remote:</p>
+
+<pre><code>  $ git remote add heroku git@heroku.com:YOUR-REPO-NAME.git 
+</code></pre>
+
+<p>You will only need to do this once. From then on, you will be able to do <code>$ git push heroku master</code> to deploy any new changes. For more information, here are some resources to get you started:</p>
+
+<ul>
+<li><a href="http://guides.rubyonrails.org/getting_started.html">Rails Guides</a></li>
+<li><a href="https://devcenter.heroku.com/">Heroku Dev Center</a></li>
+</ul>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/Microwave-MVC/microwave-rails">microwave-rails</a> is maintained by <a href="https://github.com/Microwave-MVC">Microwave-MVC</a>.</span>
